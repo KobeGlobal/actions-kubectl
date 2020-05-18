@@ -1,9 +1,9 @@
 #!/bin/sh -l
+echo `cat config.txt` | base64 -d > kubeconfig
 
-echo $1 | base64 -d > kubeconfig
 export KUBECONFIG=kubeconfig
 
-result="$(kubectl $2)"
+result="$(kubectl $1)"
 
 status=$?
 echo ::set-output name=result::$result
