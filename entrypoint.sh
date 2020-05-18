@@ -1,5 +1,5 @@
 #!/bin/sh -l
-echo `apiVersion: v1
+echo 'apiVersion: v1
 kind: Config
 clusters:
 - name: "ims"
@@ -17,7 +17,7 @@ contexts:
     user: "ims"
     cluster: "ims"
 
-current-context: "ims"` | base64 -d > kubeconfig
+current-context: "ims"' | base64 -d >> kubeconfig
 
 export KUBECONFIG=kubeconfig
 
