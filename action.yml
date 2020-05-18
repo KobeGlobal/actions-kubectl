@@ -1,7 +1,5 @@
 name: "Kubernetes Action"
 description: "Interacts with kubernetes clusters calling kubectl commands. Integrates support for AWS EKS."
-env:
-  KUBECTL_CONFIG_DATA: ${{ secrets.KUBECTL_CONFIG_DATA }}
 branding:
   icon: 'anchor'  
   color: 'blue'
