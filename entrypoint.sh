@@ -19,9 +19,9 @@
 } >> kubeconfig
 
 export KUBECONFIG=kubeconfig
-sed -i.bak 's#{replicas}#${ REPLICA }#' $1
-sed -i.bak 's#{container_image}#${ IMAGE }#' $1
-sed -i.bak 's#{secret_name}#${ SECRET_NAME }#' $1
+sed -i 's#{replicas}#${ REPLICA }#' $1
+sed -i 's#{container_image}#${ IMAGE }#' $1
+sed -i 's#{secret_name}#${ SECRET_NAME }#' $1
 result="$(kubectl $1)"
 
 status=$?
