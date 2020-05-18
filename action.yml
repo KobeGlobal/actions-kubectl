@@ -14,5 +14,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ secret.KUBECTL_CONFIG_DATA }}
+    - ${{ secrets.KUBECTL_CONFIG_DATA }}
     - ${{ inputs.args }}
