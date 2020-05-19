@@ -1,22 +1,5 @@
 #!/bin/sh -l
-{
-    echo 'apiVersion: v1'
-    echo 'kind: Config'
-    echo 'clusters:'
-    echo '- name: "ims"'
-    echo '  cluster:'
-    echo '      server: "https://rancher.getkobe.com/k8s/clusters/c-6qkj6"'
-    echo 'users:'
-    echo '- name: "ims"'
-    echo '  user:'
-    echo '      token: "kubeconfig-u-95mpm:mr4drptcm4fqbd8m6g769wnq2gfbmxgl4jv48nx6xhsqdjrqpwsh4l"'
-    echo 'contexts:'
-    echo '- name: "ims"'
-    echo '  context:'
-    echo '      user: "ims"'
-    echo '      cluster: "ims"'
-    echo 'current-context: "ims"'
-} >> kubeconfig
+echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig
 
 export KUBECONFIG=kubeconfig
 #sed -i 's#{replicas}#${ REPLICA }#' $1
