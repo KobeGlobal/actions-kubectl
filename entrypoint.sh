@@ -1,5 +1,5 @@
 #!/bin/sh -l
-echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig
+echo ${KUBECTL_CONFIG_DEFAULT_SERVICE} | base64 -d > kubeconfig
 
 export KUBECONFIG=kubeconfig
 #sed -i 's#{replicas}#${ REPLICA }#' $1
